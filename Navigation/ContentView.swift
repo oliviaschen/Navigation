@@ -13,13 +13,27 @@ struct ContentView: View {
             VStack {
                 Text("This is the root view 🦖!")
                     .font(.title)
+                    .fontWeight(.semibold)
                     .padding()
-                NavigationLink(destination: Text ("You've arrived to the Second View 🎉")
+                NavigationLink(destination: SecondView()) {
+                        Text ("Click me!")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .padding()
+                        }
+                NavigationLink(destination: Text ("Why did you click me 😑")
                     .font(.title)
+                    .fontWeight(.thin)
                     .multilineTextAlignment(.center)) {
-                    Text ("Click me!")
+                        Text ("Don't click me!")
+                            .font(.title)
+                            .fontWeight(.medium)
                 }
             }//VStack end
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
+            
         }//NavStack end
     }//body end
 }//struct end
